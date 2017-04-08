@@ -51,6 +51,7 @@ public class PessoaController {
 		.map(iso -> getCountryName(iso))
 		.sorted((a, b) -> a.compareTo(b))
 		.collect(Collectors.toList());
+
 	models.put("paises", paises);
 	return new Viewable("inserir.jsp");
     }
@@ -73,10 +74,12 @@ public class PessoaController {
     @Path("atualizar/{_id}")
     public Viewable update(@PathParam("_id") ObjectId id) {
 	this.models.put("update", pessoaServico.getPessoaPorId(id));
+
 	List<String> paises = Arrays.stream(Locale.getISOCountries())
 		.map(iso -> getCountryName(iso))
 		.sorted((a, b) -> a.compareTo(b))
 		.collect(Collectors.toList());
+
 	models.put("paises", paises);
 	return new Viewable("alterar.jsp");
     }
@@ -87,6 +90,7 @@ public class PessoaController {
 	pessoaServico.excluirPessoa(id);
 	return "redirect:pessoas/mostrar";
     }
+
     private String getCountryName(String iso) {
 	return new Locale(iso, iso).getDisplayCountry(Locale.ENGLISH);
     }
