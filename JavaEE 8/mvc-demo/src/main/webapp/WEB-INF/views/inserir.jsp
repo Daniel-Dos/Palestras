@@ -7,6 +7,7 @@
 <title>Adicionar Pessoas</title>
 </head>
 <body>
+<jsp:include page="/templates/menu.jsp"></jsp:include>
 <div align="center">
  <form action="add" method="post">
 <fieldset style="width: 400px">
@@ -38,5 +39,7 @@
 </fieldset>
   </form>
   </div>
+	<br />
+	<jsp:include page="/templates/rodape.jsp"></jsp:include>
 </body>
 </html>

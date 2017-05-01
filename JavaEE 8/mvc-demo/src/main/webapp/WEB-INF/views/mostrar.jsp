@@ -8,13 +8,14 @@
 <link href="${mvc.contextPath}/recursos/css/ozark.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<jsp:include page="/templates/menu.jsp"></jsp:include>
 <h1 align="center">Listagem dos Dados</h1>
 
 <a href="novo">Adicionar</a>
 
 		<table align="center" border="4" class="table">
 		<tr bgcolor="gray">
-		    <th class="table th">ID</th>
+		    <th>ID</th>
 			<th>Nome</th>
 			<th>Idade</th>
 			<th>País</th>
@@ -26,7 +27,7 @@
 		</tr>
 		<c:forEach items="${pessoas}" var="pessoas">
 			<tr class="table tr">
-				<td class="table td">${pessoas.id}</td>
+				<td>${pessoas.id}</td>
 				<td>${pessoas.nome}</td>
 				<td>${pessoas.idade}</td>
 				<td>${pessoas.endereco.pais}</td>
@@ -35,10 +36,12 @@
 				<td>
 				<textarea rows="10" cols="60" name="descricao" disabled="disabled"> ${pessoas.descricao} </textarea>
 				</td>
-				<td><a href="atualizar/${pessoas.id }" class="table a">Alterar</a></td>
+				<td><a href="atualizar/${pessoas.id }">Alterar</a></td>
 				<td><a href="remover/${pessoas.id}">Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<br />
+	<jsp:include page="/templates/rodape.jsp"></jsp:include>
 </body>
 </html>

@@ -7,10 +7,11 @@
 <title>Atualizar Pessoas</title>
 </head>
 <body>
+<jsp:include page="/templates/menu.jsp"></jsp:include>
 	<div align="center">
 		<form action="../update" method="post">
 		<fieldset style="width: 400px">
-            <legend>Change of Data</legend>
+            <legend>Alterar Dados</legend>
    
 		<input type="text" name="_id" value="${update.id }" hidden="true"><br/><br />
       Nome: <input type="text" name="nome"  value="${update.nome}"/><br /><br />
@@ -34,9 +35,11 @@
 				<br /><br /> 
    <textarea rows="10" cols="30" name="descricao">Descrição</textarea> 
    <br/><br />
-      <input type="submit" value="Update Data">
+      <input type="submit" value="Alterar Dados">
       </fieldset>
   </form>
   </div>
+	<br />
+	<jsp:include page="/templates/rodape.jsp"></jsp:include>
 </body>
 </html>
